@@ -12,23 +12,7 @@ This reads the .csv file into R and then (since the assignment asks us to ignore
 
 ```r
 wal <- read.csv("activity.csv")
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
-```
-
-```r
 walk <- na.omit(wal)
-```
-
-```
-## Error in na.omit(wal): object 'wal' not found
 ```
 
 **** Histogram  ****
@@ -36,19 +20,10 @@ walk <- na.omit(wal)
 
 ```r
 hwalk <- tapply(walk$steps, walk$date, sum)
-```
-
-```
-## Error in tapply(walk$steps, walk$date, sum): object 'walk' not found
-```
-
-```r
 hist(hwalk)
 ```
 
-```
-## Error in hist(hwalk): object 'hwalk' not found
-```
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 
 **** Mean and Median ****
@@ -60,7 +35,28 @@ tapply(walk$steps, walk$date, mean)
 ```
 
 ```
-## Error in tapply(walk$steps, walk$date, mean): object 'walk' not found
+## 2012-10-01 2012-10-02 2012-10-03 2012-10-04 2012-10-05 2012-10-06 
+##         NA  0.4375000 39.4166667 42.0694444 46.1597222 53.5416667 
+## 2012-10-07 2012-10-08 2012-10-09 2012-10-10 2012-10-11 2012-10-12 
+## 38.2465278         NA 44.4826389 34.3750000 35.7777778 60.3541667 
+## 2012-10-13 2012-10-14 2012-10-15 2012-10-16 2012-10-17 2012-10-18 
+## 43.1458333 52.4236111 35.2048611 52.3750000 46.7083333 34.9166667 
+## 2012-10-19 2012-10-20 2012-10-21 2012-10-22 2012-10-23 2012-10-24 
+## 41.0729167 36.0937500 30.6284722 46.7361111 30.9652778 29.0104167 
+## 2012-10-25 2012-10-26 2012-10-27 2012-10-28 2012-10-29 2012-10-30 
+##  8.6527778 23.5347222 35.1354167 39.7847222 17.4236111 34.0937500 
+## 2012-10-31 2012-11-01 2012-11-02 2012-11-03 2012-11-04 2012-11-05 
+## 53.5208333         NA 36.8055556 36.7048611         NA 36.2465278 
+## 2012-11-06 2012-11-07 2012-11-08 2012-11-09 2012-11-10 2012-11-11 
+## 28.9375000 44.7326389 11.1770833         NA         NA 43.7777778 
+## 2012-11-12 2012-11-13 2012-11-14 2012-11-15 2012-11-16 2012-11-17 
+## 37.3784722 25.4722222         NA  0.1423611 18.8923611 49.7881944 
+## 2012-11-18 2012-11-19 2012-11-20 2012-11-21 2012-11-22 2012-11-23 
+## 52.4652778 30.6979167 15.5277778 44.3993056 70.9270833 73.5902778 
+## 2012-11-24 2012-11-25 2012-11-26 2012-11-27 2012-11-28 2012-11-29 
+## 50.2708333 41.0902778 38.7569444 47.3819444 35.3576389 24.4687500 
+## 2012-11-30 
+##         NA
 ```
 
 Median
@@ -70,7 +66,28 @@ tapply(walk$steps, walk$date, median)
 ```
 
 ```
-## Error in tapply(walk$steps, walk$date, median): object 'walk' not found
+## 2012-10-01 2012-10-02 2012-10-03 2012-10-04 2012-10-05 2012-10-06 
+##         NA          0          0          0          0          0 
+## 2012-10-07 2012-10-08 2012-10-09 2012-10-10 2012-10-11 2012-10-12 
+##          0         NA          0          0          0          0 
+## 2012-10-13 2012-10-14 2012-10-15 2012-10-16 2012-10-17 2012-10-18 
+##          0          0          0          0          0          0 
+## 2012-10-19 2012-10-20 2012-10-21 2012-10-22 2012-10-23 2012-10-24 
+##          0          0          0          0          0          0 
+## 2012-10-25 2012-10-26 2012-10-27 2012-10-28 2012-10-29 2012-10-30 
+##          0          0          0          0          0          0 
+## 2012-10-31 2012-11-01 2012-11-02 2012-11-03 2012-11-04 2012-11-05 
+##          0         NA          0          0         NA          0 
+## 2012-11-06 2012-11-07 2012-11-08 2012-11-09 2012-11-10 2012-11-11 
+##          0          0          0         NA         NA          0 
+## 2012-11-12 2012-11-13 2012-11-14 2012-11-15 2012-11-16 2012-11-17 
+##          0          0         NA          0          0          0 
+## 2012-11-18 2012-11-19 2012-11-20 2012-11-21 2012-11-22 2012-11-23 
+##          0          0          0          0          0          0 
+## 2012-11-24 2012-11-25 2012-11-26 2012-11-27 2012-11-28 2012-11-29 
+##          0          0          0          0          0          0 
+## 2012-11-30 
+##         NA
 ```
 
 **** Time series plot **** 
@@ -78,19 +95,10 @@ tapply(walk$steps, walk$date, median)
 
 ```r
 twalk <- tapply(walk$steps, walk$interval, mean)
-```
-
-```
-## Error in tapply(walk$steps, walk$interval, mean): object 'walk' not found
-```
-
-```r
 plot(levels(factor(walk$interval)), twalk, type = "l")
 ```
 
-```
-## Error in factor(walk$interval): object 'walk' not found
-```
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 ****  Point with maximum number of average (mean) steps per interval. **** 
 
@@ -102,7 +110,8 @@ which.max(twalk)
 ```
 
 ```
-## Error in which.max(twalk): object 'twalk' not found
+## 835 
+## 104
 ```
 
 **** Imputing missing values. **** 
@@ -116,77 +125,25 @@ The dates that now were removed were subsequently removed as factors.
 
 ```r
 swalk <- tapply(walk$steps, walk$date, median)
-```
-
-```
-## Error in tapply(walk$steps, walk$date, median): object 'walk' not found
-```
-
-```r
 nswalk <- is.na(swalk)
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'swalk' not found
-```
-
-```r
 toBeRemoved <- which(nswalk == TRUE)
-```
-
-```
-## Error in which(nswalk == TRUE): object 'nswalk' not found
-```
-
-```r
 brbr <- labels(toBeRemoved)
-```
-
-```
-## Error in labels(toBeRemoved): object 'toBeRemoved' not found
-```
-
-```r
 brbr
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'brbr' not found
+## [1] "2012-10-01" "2012-10-08" "2012-11-01" "2012-11-04" "2012-11-09"
+## [6] "2012-11-10" "2012-11-14" "2012-11-30"
 ```
 
 ```r
 walk2 <-wal
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'wal' not found
-```
-
-```r
 for(i in 1:8) {  
      walk2 <-subset(walk2, date != brbr[i])
      walk2
 }
-```
-
-```
-## Error in subset(walk2, date != brbr[i]): object 'walk2' not found
-```
-
-```r
 walk2$date <- as.factor(as.character(walk2$date))
-```
-
-```
-## Error in is.factor(x): object 'walk2' not found
-```
-
-```r
 walk <- walk2
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'walk2' not found
 ```
 
 Next the median of the remaining days was taken:
@@ -197,7 +154,24 @@ tapply(walk$steps, walk$date, median)
 ```
 
 ```
-## Error in tapply(walk$steps, walk$date, median): object 'walk' not found
+## 2012-10-02 2012-10-03 2012-10-04 2012-10-05 2012-10-06 2012-10-07 
+##          0          0          0          0          0          0 
+## 2012-10-09 2012-10-10 2012-10-11 2012-10-12 2012-10-13 2012-10-14 
+##          0          0          0          0          0          0 
+## 2012-10-15 2012-10-16 2012-10-17 2012-10-18 2012-10-19 2012-10-20 
+##          0          0          0          0          0          0 
+## 2012-10-21 2012-10-22 2012-10-23 2012-10-24 2012-10-25 2012-10-26 
+##          0          0          0          0          0          0 
+## 2012-10-27 2012-10-28 2012-10-29 2012-10-30 2012-10-31 2012-11-02 
+##          0          0          0          0          0          0 
+## 2012-11-03 2012-11-05 2012-11-06 2012-11-07 2012-11-08 2012-11-11 
+##          0          0          0          0          0          0 
+## 2012-11-12 2012-11-13 2012-11-15 2012-11-16 2012-11-17 2012-11-18 
+##          0          0          0          0          0          0 
+## 2012-11-19 2012-11-20 2012-11-21 2012-11-22 2012-11-23 2012-11-24 
+##          0          0          0          0          0          0 
+## 2012-11-25 2012-11-26 2012-11-27 2012-11-28 2012-11-29 
+##          0          0          0          0          0
 ```
 
 And all medians were found to be zero.  As such remaining NA's were replaced with 0's.  While there are no more NA values that was accomplished by:
@@ -207,28 +181,15 @@ And all medians were found to be zero.  As such remaining NA's were replaced wit
 walk2[is.na(walk2)] <- 0
 ```
 
-```
-## Error in walk2[is.na(walk2)] <- 0: object 'walk2' not found
-```
-
 ****  Histogram of post-NA replacement **** 
 
 
 ```r
 hwalk2 <- tapply(walk2$steps, walk2$date, sum)
-```
-
-```
-## Error in tapply(walk2$steps, walk2$date, sum): object 'walk2' not found
-```
-
-```r
 hist(hwalk2)
 ```
 
-```
-## Error in hist(hwalk2): object 'hwalk2' not found
-```
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 ****  Weekdays and Weekends **** 
 
@@ -237,90 +198,16 @@ Firstly we need to convert the date column to date.  Then assign them the day of
 
 ```r
 walk2$date <- as.Date(walk2$date)
-```
-
-```
-## Error in as.Date(walk2$date): object 'walk2' not found
-```
-
-```r
 walk2$wkdy <-weekdays(walk2$date)
-```
-
-```
-## Error in weekdays(walk2$date): object 'walk2' not found
-```
-
-```r
 walk2s <- subset(walk2, walk2$wkdy == "Sunday")
-```
-
-```
-## Error in subset(walk2, walk2$wkdy == "Sunday"): object 'walk2' not found
-```
-
-```r
 walk2ss <- subset(walk2, walk2$wkdy == "Saturday")
-```
-
-```
-## Error in subset(walk2, walk2$wkdy == "Saturday"): object 'walk2' not found
-```
-
-```r
 walk2weekends <- rbind(walk2s, walk2ss)
-```
-
-```
-## Error in rbind(walk2s, walk2ss): object 'walk2s' not found
-```
-
-```r
 walk2m <- subset(walk2, walk2$wkdy == "Monday")
-```
-
-```
-## Error in subset(walk2, walk2$wkdy == "Monday"): object 'walk2' not found
-```
-
-```r
 walk2t <- subset(walk2, walk2$wkdy == "Tuesday")
-```
-
-```
-## Error in subset(walk2, walk2$wkdy == "Tuesday"): object 'walk2' not found
-```
-
-```r
 walk2w <- subset(walk2, walk2$wkdy == "Wednesday")
-```
-
-```
-## Error in subset(walk2, walk2$wkdy == "Wednesday"): object 'walk2' not found
-```
-
-```r
 walk2th <- subset(walk2, walk2$wkdy == "Thursday")
-```
-
-```
-## Error in subset(walk2, walk2$wkdy == "Thursday"): object 'walk2' not found
-```
-
-```r
 walk2f <- subset(walk2, walk2$wkdy == "Friday")
-```
-
-```
-## Error in subset(walk2, walk2$wkdy == "Friday"): object 'walk2' not found
-```
-
-```r
 walk2weekdays <- rbind(walk2m, walk2t, walk2w, walk2th, walk2f)
-```
-
-```
-## Error in rbind(walk2m, walk2t, walk2w, walk2th, walk2f): object 'walk2m' not found
 ```
 
 Then we need to find the averages and make the graphs.
@@ -328,33 +215,11 @@ Then we need to find the averages and make the graphs.
 
 ```r
 twalkwd <- tapply(walk2weekdays$steps, walk2weekdays$interval, mean)
-```
-
-```
-## Error in tapply(walk2weekdays$steps, walk2weekdays$interval, mean): object 'walk2weekdays' not found
-```
-
-```r
 twalkwe <- tapply(walk2weekends$steps, walk2weekends$interval, mean)
-```
 
-```
-## Error in tapply(walk2weekends$steps, walk2weekends$interval, mean): object 'walk2weekends' not found
-```
-
-```r
 par(mfrow =c(1,2))
 plot(levels(factor(walk2weekends$interval)), twalkwe, type = "l", main= "Weekends", xlab = "Intervals", ylab = "Steps")
-```
-
-```
-## Error in factor(walk2weekends$interval): object 'walk2weekends' not found
-```
-
-```r
 plot(levels(factor(walk2weekdays$interval)), twalkwd, type = "l", main= "Weekdays", xlab = "Intervals", ylab = "Steps")
 ```
 
-```
-## Error in factor(walk2weekdays$interval): object 'walk2weekdays' not found
-```
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
